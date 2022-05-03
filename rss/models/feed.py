@@ -23,6 +23,8 @@ class FeedContent(TimeStampedModel):
     CONTENT_TYPE = [
         ('podcast', 'Podcast'),
         ('article', 'Article'),
+        ('youtube', 'Youtube'),
+        ('newsletter', 'Newsletter'),
     ]
 
     guid = models.CharField(max_length=50, unique=True, blank=False)
@@ -34,4 +36,4 @@ class FeedContent(TimeStampedModel):
     tags = models.ManyToManyField(Tag, related_name="content_tags", related_query_name="content_tags")
 
     def __str__(self) -> str:
-        return f"{self.guid}: {self.title}"
+        return f"{self.guid}/{self.content_type}: {self.title}"
