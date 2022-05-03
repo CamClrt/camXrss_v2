@@ -5,3 +5,5 @@ sqlparse~=0.4.2
 psycopg2~=2.9.3
 asgiref~=3.5.0
 coverage==5.5
+django-model-utils~=4.2.0
+setuptools~=62.0.0
